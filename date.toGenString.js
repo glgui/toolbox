@@ -1,7 +1,5 @@
-/* 
- * usage: new Date().toGenString()
- */
-
+// usage: Date().toGenString()
+ 
 if (!Date.prototype.toGenString) {
 	Date.prototype.toGenString = function () {		
 		function pad (i) {
@@ -13,8 +11,6 @@ if (!Date.prototype.toGenString) {
 		this.getFullYear() + ' ' +
 		pad(this.getHours()) + ':' +
 		pad(this.getMinutes()) + ':' +
-		pad(this.getSeconds());
-		
-		// output 10/10/2010 21:15:07
+		pad(this.getSeconds()); // output '10/10/2010 21:15:07'
 	};
 }

@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8"$>
-	<title>Pluralize Demo</title>
+	<meta charset="utf-8">
+	<title>String.Pluralize Examples</title>
 	<link rel="stylesheet" href="assets/master.css" media="screen" />
+	<script src="../String.pluralize.js"></script>
 </head>
 <body>
-	<h1>Pluralize</h1>
+	<h1>String.pluralize</h1>
 	
 	<p>Pluralize a singular term based on a count provided and optionally override the generated plural version with a provided plural form.</p>
 
 <code class="js">		
-'test'.pluralize(1) // return 'test'
-'test'.pluralize(2) // return 'tests'
-'person'.pluralize(1, 'people') // return 'person'
-'people'.pluralize(2, 'people') // return 'people'
-'fax'.pluralize(2) // return 'faxes'
-'mess'.pluralize(2) // return 'messes'
-'pretty'.pluralize(2) // return 'pretties'
+'test'.pluralize(1) // return '<script>document.write('test'.pluralize(1));</script>'
+'test'.pluralize(2) // return '<script>document.write('test'.pluralize(2));</script>'
+'person'.pluralize(1, 'people') // return '<script>document.write('person'.pluralize(1, 'people'));</script>'
+'people'.pluralize(2, 'people') // return '<script>document.write('people'.pluralize(2, 'people'));</script>'
+'fax'.pluralize(2) // return '<script>document.write('fax'.pluralize(2));</script>'
+'mess'.pluralize(2) // return '<script>document.write('mess'.pluralize(2));</script>'
+'pretty'.pluralize(2) // return '<script>document.write('pretty'.pluralize(2));</script>'
 </code>
 </body>
 </html>
