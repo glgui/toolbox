@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"$>
+	<title>Pluralize Demo</title>
+	<link rel="stylesheet" href="assets/master.css" media="screen" />
+</head>
+<body>
+	<h1>Pluralize</h1>
+	
+	<p>Pluralize a singular term based on a count provided and optionally override the generated plural version with a provided plural form.</p>
+
+<code class="js">		
+'test'.pluralize(1) // return 'test'
+'test'.pluralize(2) // return 'tests'
+'person'.pluralize(1, 'people') // return 'person'
+'people'.pluralize(2, 'people') // return 'people'
+'fax'.pluralize(2) // return 'faxes'
+'mess'.pluralize(2) // return 'messes'
+'pretty'.pluralize(2) // return 'pretties'
+</code>
+</body>
+</html>
