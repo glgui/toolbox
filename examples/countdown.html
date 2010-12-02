@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Countdown.js Examples</title>
+	<link rel="stylesheet" href="assets/master.css" media="screen" />
+	<style>
+		.low {
+			color: #fc0;
+		}
+		.over {
+			color: #f00;
+		}
+	</style>
+</head>
+<body>
+	<h1>Countdown.js</h1>
+	
+	<p>Create a countdown character counter for a field.</p>
+	
+	<h2>Dependencies</h2>
+	<ul>
+		<li>jQuery</li>
+		<li>jQuery Widget Factory</li>
+		<li>String.pluralize</li>
+	</ul>
+	
+	<h2>Config Object</h2>
+	<dl>
+		<dt>max</dt>
+		<dd>Maximum number of characters allowed in field. Default: field <code>maxlength</code> value</dd>
+		
+		<dt>'class'</dt>
+		<dd>Class to apply to the countdown counter. Default: <code>counter</code></dd>
+		
+		<dt>text</dt>
+		<dd>The text to put after the counter. Assumes first word should be plural or singular based on count left. Default: 'character left'.</dd>
+		
+		<dt>thresholds</dt>
+		<dd>Object of thresholds of counter number (as a percentage of the max in decimal format) to apply classes to the counter. Default: <code>{}</code></dd>
+
+		<dt>events</dt>
+		<dd>Array of events to trigger the recalculating of the counter. Events are namespaced with <code>countdown</code>. Also adds a custom event of <code>reCount</code>. Default: <code>['keyup', 'blur', 'focus', 'change', 'paste']</code></dd>
+
+		<dt>callback</dt>
+		<dd>Custom function to call after the recalculation of the count. Default: <code>$.noop</code></dd>
+	</dl>
+	
+	<h2>Example</h2>
+
+	<form id="form">
+		<textarea name="text" id="text" maxlength="20"></textarea>
+	</form>
+	
+	<script src="assets/libs/jquery-1.4.4.min.js"></script>
+	<script src="assets/libs/jquery-ui-1.8.6.custom.min.js"></script>
+	<script src="../prototype-utils.js"></script>
+	<script src="../countdown.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('textarea').countdown({thresholds: {low: 0.2, over: 0}});
+		});
+	</script>
+	
+</body>
+</html>
