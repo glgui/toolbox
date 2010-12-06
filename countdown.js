@@ -10,8 +10,10 @@
 			callback: $.noop
 		},
 		_create: function () {
-			console.log(this.options.thresholds);
-			var self = this, aThresholds = [], count;
+			var self = this, 
+					aThresholds = [], 
+					count;
+
 			this.options.max = this.options.max || this.element.attr('maxlength');
 			
 			// Create thresholds array for sorting
@@ -21,10 +23,12 @@
 				}
 			}
 			
+			// Sort said thresholds array
 			aThresholds.sort(function (a, b) {
 				return b[1] - a[1];
 			});
 			
+			// Overwrite the thresholds object with the array
 			this.options.thresholds = aThresholds;
 			
 			count = this.getCount();
@@ -37,6 +41,7 @@
 			aEvents.push('reCount');
 			this.element.bind(aEvents.join(' '), $.proxy(this._change, this));
 		},
+		// If the option being updated is count, and it's change, rebuild the counter
 		_setOption: function (key, value) {
 			switch (key) {
 				case 'count':
@@ -48,17 +53,20 @@
 			
 			$.Widget.prototype._setOption.apply(this, arguments);
 		},
+		// Do the count thing and then call the custom callback
 		_change: function (e) {
 			this.option('count', this.getCount());
 
 			this._trigger('callback', e, this.options);
 		},
+		// Create countdown timer from scratch each time
 		build: function ( /* Int */ count) {
 			var aTxt = this.options.text.split(' '),
 					threshold = this.getThreshold(count),
 					classes = (threshold) ? this.options['class'] + ' ' + threshold : this.options['class'], 
 					$counter;
-					
+			
+			// Build out html		
 			aTxt = this.options.text.split(' ');
 			aTxt[0] = aTxt[0].pluralize(count);
 			$counter = $('<p />', {
@@ -66,6 +74,7 @@
 				html: '<span>' + count + '</span> ' + aTxt.join(' ')
 			});
 		
+			// Drop it into the DOM, replacing if already exists
 			if (!this.$counter) {
 				this.element.after($counter);
 			} else {
@@ -73,10 +82,11 @@
 			}
 			this.$counter = $counter;
 		},
+		// Get how many characters are left in the max
 		getCount: function () {
 			return this.options.max - this.element[0].value.length; // Int
-			
 		},
+		// Get the threshold the value has passed (if any)
 		getThreshold: function ( /* Int */ count ) {
 			var l = this.options.thresholds.length,
 					threshold = '';
@@ -91,7 +101,7 @@
 			return threshold; // String
 		},
 		destroy: function () {
-			$counter.remove();
+			this.$counter.remove();
 			$.Widget.prototype.destroy.call(this);
 		}
 	});

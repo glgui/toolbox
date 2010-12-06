@@ -18,6 +18,22 @@
 	
 	<p>Create a countdown character counter for a field.</p>
 	
+	<h2>Example</h2>
+
+	<form id="form">
+		<textarea name="text" id="text" maxlength="20"></textarea>
+	</form>
+	
+	<h2>Code</h2>
+	
+	<pre><code>
+&lt;form id="form"&gt;
+	&lt;textarea name="text" id="text" maxlength="20"&gt;&lt;/textarea&gt;
+&lt;/form&gt;
+
+$('textarea').countdown({thresholds: {low: 0.2, over: 0}});
+	</code></pre>
+	
 	<h2>Dependencies</h2>
 	<ul>
 		<li>jQuery</li>
@@ -46,12 +62,18 @@
 		<dd>Custom function to call after the recalculation of the count. Default: <code>$.noop</code></dd>
 	</dl>
 	
-	<h2>Example</h2>
+	<h2>Public Methods</h2>
+	<dl>
+		<dt>build</dt>
+		<dd>Build out the counter HTML and attach it the DOM.</dd>
+		
+		<dt>getCount</dt>
+		<dd>Get the characters left from the max minus the number of characters in the input.</dd>
+		
+		<dt>getThreshold</dt>
+		<dd>Get what threshold (if any) the value has surpassed.</dd>
+	</dl>
 
-	<form id="form">
-		<textarea name="text" id="text" maxlength="20"></textarea>
-	</form>
-	
 	<script src="assets/libs/jquery-1.4.4.min.js"></script>
 	<script src="assets/libs/jquery-ui-1.8.6.custom.min.js"></script>
 	<script src="../prototype-utils.js"></script>
