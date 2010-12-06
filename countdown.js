@@ -32,7 +32,8 @@
 			this.options.thresholds = aThresholds;
 			
 			count = this.getCount();
-			this.build(count);
+			this.$counter = this.build(count);
+			this.element.after(this.$counter);
 			
 			// Bind name spaced event listeners
 			var aEvents = $.map(this.options.events, function(evt){
@@ -41,12 +42,14 @@
 			aEvents.push('reCount');
 			this.element.bind(aEvents.join(' '), $.proxy(this._change, this));
 		},
-		// If the option being updated is count, and it's change, rebuild the counter
 		_setOption: function (key, value) {
+			var $counter;
 			switch (key) {
+				// If the option being updated is count, and it's change, rebuild
 				case 'count':
 					if (value !==  this.options.count) {
-						this.build(value);
+						$counter = this.build(value);
+						this.replace($counter);
 					}
 					break;
 			}
@@ -73,13 +76,11 @@
 				'class': classes,
 				html: '<span>' + count + '</span> ' + aTxt.join(' ')
 			});
-		
-			// Drop it into the DOM, replacing if already exists
-			if (!this.$counter) {
-				this.element.after($counter);
-			} else {
-				this.$counter.replaceWith($counter);
-			}
+			
+			return $counter; // jQuery object
+		},
+		replace: function ( /* jQuery object */ $counter ) {
+			this.$counter.replaceWith($counter);
 			this.$counter = $counter;
 		},
 		// Get how many characters are left in the max
