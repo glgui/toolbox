@@ -43,13 +43,11 @@
 			this.element.bind(aEvents.join(' '), $.proxy(this._change, this));
 		},
 		_setOption: function (key, value) {
-			var $counter;
 			switch (key) {
 				// If the option being updated is count, and it's change, rebuild
 				case 'count':
 					if (value !==  this.options.count) {
-						$counter = this.build(value);
-						this.replace($counter);
+						this.replace(this.build(value));
 					}
 					break;
 			}
