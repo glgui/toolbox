@@ -11,6 +11,7 @@
 				lastIdx = text.length - 1;
 				switch (text[lastIdx]) {
 					case 'x':
+					case 'h':
 					case 's':
 						text += 'es';
 						break;
