@@ -1,0 +1,36 @@
+.wcte-container { position: relative; color: #666; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 12px; }
+.wcte-container a { color: #0079A3; }
+.wcte-buttons { overflow: hidden; margin-bottom: 2px; }
+.wcte-buttons button { float: right; width: 20px; height: 16px; background-color: #ccc; border: none; margin-left: 2px; }
+.wcte-btn-link { text-indent: -9999px; background: #ccc url(/content/images/icon-textedit-sprite.png) center -50px no-repeat;  }
+.wcte-btn-link.active, .wcte-btn-link:hover { background: #ccc url(/content/images/icon-textedit-sprite.png) center -200px no-repeat; }
+.wcte-btn-unlink { text-indent: -9999px; background: #ccc url(/content/images/icon-textedit-sprite.png) center -100px no-repeat; }
+.wcte-btn-spell { text-indent: -9999px; background: #ccc url(/content/images/icon-textedit-sprite.png) center 0px no-repeat; }
+.wcte-btn-spell.errors, .wcte-btn-spell:hover { background: #ccc url(/content/images/icon-textedit-sprite.png) center -150px no-repeat; }
+.wcte-editor { height: 100px; background-color: #fff; color: #000; padding: 10px; margin-bottom: 10px; overflow-y: scroll;  }
+.wcte-editor font { cursor: pointer; }
+.wcte-placeholder { color: #999; }
+.wcte-charCount { text-align: right; float: right; width: 200px; color: #999; }
+.wcte-charCount .tooLong { color: #f00; }
+.wcte-modal { background-color: #f6f6f6; border: 5px solid #aaa; padding: 10px; z-index: 2; }
+.wcte-linkModal { position: absolute; top: 20px; right: 2px; left: auto !important; white-space: nowrap; overflow: hidden; }
+.wcte-linkModal input { margin: 0px 5px; width: auto; padding: 2px 5px; color: #333; border-color: #666; }
+.wcte-linkModal button { 
+	color: #0079A3;
+	background-color: #f9f9f9;
+	background-image: -moz-linear-gradient(top, #ffffff, #e0e0e0); /* FF3.6 */
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #ffffff),color-stop(1, #e0e0e0)); /* Saf4+, Chrome */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#e0e0e0')"; /* IE8 */
+	color: #0079a3;
+	padding: 3px 20px;
+	line-height: normal;
+	border: 1px solid #aac6d1;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	font-weight: bold; 
+	font-size: 12px;
+}
+.wcte-linkModal a { cursor: pointer; margin-left: 5px; }
+.wcte-linkOverlay, .wcte-spellCheckModal { position: absolute; }
+.wcte-spellCheckModal { max-height: 100px; width: 200px; overflow-y: auto; }
