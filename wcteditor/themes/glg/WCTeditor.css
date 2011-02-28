@@ -2,11 +2,11 @@
 .wcte-container a { color: #0079A3; }
 .wcte-buttons { overflow: hidden; margin-bottom: 2px; }
 .wcte-buttons button { float: right; width: 20px; height: 16px; background-color: #ccc; border: none; margin-left: 2px; }
-.wcte-btn-link { text-indent: -9999px; background: #ccc url(/content/images/icon-textedit-sprite.png) center -50px no-repeat;  }
-.wcte-btn-link.active, .wcte-btn-link:hover { background: #ccc url(/content/images/icon-textedit-sprite.png) center -200px no-repeat; }
-.wcte-btn-unlink { text-indent: -9999px; background: #ccc url(/content/images/icon-textedit-sprite.png) center -100px no-repeat; }
-.wcte-btn-spell { text-indent: -9999px; background: #ccc url(/content/images/icon-textedit-sprite.png) center 0px no-repeat; }
-.wcte-btn-spell.errors, .wcte-btn-spell:hover { background: #ccc url(/content/images/icon-textedit-sprite.png) center -150px no-repeat; }
+.wcte-btn-link { text-indent: -9999px; background: #ccc url(/wcteditor/themes/glg/icon-textedit-sprite.png) center -50px no-repeat;  }
+.wcte-btn-link.active, .wcte-btn-link:hover { background: #ccc url(/wcteditor/themes/glg/icon-textedit-sprite.png) center -200px no-repeat; }
+.wcte-btn-unlink { text-indent: -9999px; background: #ccc url(/wcteditor/themes/glg/icon-textedit-sprite.png) center -100px no-repeat; }
+.wcte-btn-spell { text-indent: -9999px; background: #ccc url(/wcteditor/themes/glg/icon-textedit-sprite.png) center 0px no-repeat; }
+.wcte-btn-spell.errors, .wcte-btn-spell:hover { background: #ccc url(/wcteditor/themes/glg/icon-textedit-sprite.png) center -150px no-repeat; }
 .wcte-editor { height: 100px; background-color: #fff; color: #000; padding: 10px; margin-bottom: 10px; overflow-y: scroll;  }
 .wcte-editor font { cursor: pointer; }
 .wcte-placeholder { color: #999; }
