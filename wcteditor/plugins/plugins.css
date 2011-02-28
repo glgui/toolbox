@@ -1,0 +1,34 @@
+/*  WCTeditor.classPicker   */
+.wcte-buttons button.wcte-btn-classes { width: 80px; }
+.wcte-classModal { position: absolute; top: 25px; }
+.wcte-classModal a { cursor: pointer; margin-left: 5px; }
+
+p.question {
+    background: none repeat scroll 0 0 #FFDDDD;
+    border: 1px solid #FF0000;
+}
+p.answer {
+    background: none repeat scroll 0 0 #DDFFEE;
+    border: 1px solid #006633;
+}
+p.category {
+    background: none repeat scroll 0 0 #DDEEFF;
+    border: 1px solid #0066FF;
+}
+p.heading {
+    background: none repeat scroll 0 0 #FFEEDD;
+    border: 1px solid #FFD700;
+}
+
+
+/* WCTeditor.linkNewWindow  */
+.wcte-link-options {
+    clear: left;
+}
+.wcte-link-options input {
+    vertical-align: middle;
+}
+.wcte-link-options label {
+    float: none;
+    font-weight: normal;
+}
